@@ -1,0 +1,21 @@
+{
+  "evidence_patch": {
+    "company": "",
+    "ticker": "",
+    "market": "",
+    "current_price": null,
+    "current_price_source": "",
+    "price_date": "",
+    "fcf_per_share": null,
+    "fcf_per_share_source": "",
+    "source_pfcf": null,
+    "source_pfcf_source": "",
+    "share_count": null,
+    "share_count_source": "",
+    "target_price": null,
+    "target_price_source": "",
+    "eps_f1": null,
+    "eps_f2": null,
+    "notes": "Use only verified values. Leave unknown fields null."
+  }
+}

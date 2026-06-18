@@ -1,0 +1,16 @@
+flowchart TD
+    A["User Request"] --> B["Research Director<br/>Clarify task and depth"]
+    B --> C["Research Director<br/>Set evidence requirements"]
+    C --> D["Data Steward<br/>Collect and validate data"]
+    D --> E["Company & Industry Analyst<br/>Business and industry context"]
+    D --> F["Valuation & Risk Analyst<br/>Valuation and risk"]
+    E --> G{"Need more data?"}
+    F --> G
+    G -->|Yes| H["Focused data request"]
+    H --> I["Research Director<br/>Approve or reject"]
+    I -->|Approve| D
+    I -->|Reject| J["Disclose limitation"]
+    G -->|No| K["Report & Visualization Agent"]
+    J --> K
+    K --> L["Final Research Report"]
+

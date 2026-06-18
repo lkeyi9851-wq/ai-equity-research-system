@@ -1,0 +1,17 @@
+flowchart TD
+    RD["Research Director<br/>Planning and synthesis"]
+    DS["Data Steward<br/>Collection and validation"]
+    CA["Company & Industry Analyst<br/>Business and sector context"]
+    VR["Valuation & Risk Analyst<br/>Valuation and risk"]
+    RV["Report & Visualization Agent<br/>Report and visuals"]
+
+    RD --> DS
+    RD --> CA
+    RD --> VR
+    DS --> CA
+    DS --> VR
+    CA --> VR
+    CA --> RV
+    VR --> RV
+    RD --> RV
+
