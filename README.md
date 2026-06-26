@@ -1,9 +1,22 @@
 # AI Equity Research System
 
-`ai-equity-research-system` is a local-first research agent prototype for
-single-stock equity work. The current MVP is intentionally narrow: it turns a
-small local source package into an English Standard-depth memo with explicit
-thesis, rating, confidence, valuation bridge, triggers, and self-checks.
+`ai-equity-research-system` is an experimental AI-assisted equity research
+workflow for educational and research purposes.
+
+It is not a stock recommendation engine, financial advisor, trading system, or
+production investment platform. The project focuses on research process quality:
+source handling, evidence evaluation, company understanding, industry signal
+interpretation, valuation reasoning, thesis formation, risk review, and
+post-mortem learning.
+
+The current public version is a prototype. It is shared to document system
+design and invite feedback on research workflow, agent architecture, and
+viewpoint-quality evaluation. It should not be used as the sole basis for
+investment decisions.
+
+The MVP is intentionally narrow: it turns a small local source package into an
+English Standard-depth research memo with explicit thesis, confidence,
+valuation bridge, triggers, and self-checks.
 
 The project is not trying to be a full investment platform yet. It does not
 do portfolio construction, dashboards, trading workflows, cloud deployment, or
@@ -61,7 +74,7 @@ Supported source types in the MVP:
 - `.csv`
 - `.xlsx`
 
-Run the Standard memo flow:
+Run the Standard memo flow with your own local source package:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_mvp.ps1 -InputFile .\inputs -Company "Company Name" -Ticker TICKER
@@ -70,7 +83,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_mvp.ps1 -Input
 Or use a natural-language request:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_mvp.ps1 -Request "Analyze Sany Heavy Industry 600031 using inputs, concise memo"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_mvp.ps1 -Request "Analyze Example Industrial Co. using inputs, concise memo"
 ```
 
 Each run writes:
@@ -95,13 +108,13 @@ web brief rather than dumping raw search output into the memo.
 Generate an offline search log:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\generate_web_research_brief.ps1 -Company "Sany Heavy Industry" -Ticker 600031 -Market CN
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\generate_web_research_brief.ps1 -Company "Example Industrial Co." -Ticker EXAMPLE -Market US
 ```
 
 Attempt an online brief:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\generate_web_research_brief.ps1 -Company "Sany Heavy Industry" -Ticker 600031 -Market CN -Online -ResearchProvider llm
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\generate_web_research_brief.ps1 -Company "Example Industrial Co." -Ticker EXAMPLE -Market US -Online -ResearchProvider llm
 ```
 
 Recommended local test provider: OpenRouter. It is OpenAI-compatible and can
@@ -159,10 +172,19 @@ Ignored by `.gitignore`:
 That keeps the public repo focused on the system logic rather than personal
 research materials or test artifacts.
 
+## Public Safety
+
+The public repository should contain only framework, code, templates, and
+synthetic or abstract examples. Do not commit private research notes, paid
+research excerpts, raw institutional reports, real API keys, personal input
+packages, generated outputs, or live investment theses.
+
 ## Core Docs
 
 If you want the full design and judgment framework, start here:
 
+- `PUBLIC_SAFETY.md`
+- `ROADMAP_PUBLIC.md`
 - `07_LIVE_PROJECT_MAP.md`
 - `00_PROJECT_CHARTER.md`
 - `03_RESEARCH_WORKFLOW.md`
