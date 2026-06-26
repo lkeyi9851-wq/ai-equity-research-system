@@ -1,6 +1,6 @@
-# Sany Trigger Examples
+# Industrial Machinery Trigger Examples
 
-For Sany / machinery:
+For an industrial machinery company:
 
 ```text
 Growth trigger:
